@@ -1,0 +1,6 @@
+<h2>Newest Users</h2>
+<% @users.reverse_each do |user| %>
+<%= gravatar_for_home user %>
+<%= link_to "#{user.username}", user %>
+<%= time_ago_in_words(user.created_at) + " ago" %><br /> 
+<% end %>

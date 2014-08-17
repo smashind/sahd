@@ -1,0 +1,8 @@
+<h1><%= @user.username %></h1>
+
+<%= gravatar_for_profile @user %>
+<% @user.statuses.reverse_each do |status| %>
+	<h3><%= link_to "#{status.title}", status %></h3>
+	<%= time_ago_in_words(status.created_at) + " ago" %>
+	<p><%= status.body %></p>
+<% end %>

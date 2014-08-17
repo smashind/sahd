@@ -1,0 +1,4 @@
+<h1>Users</h1>
+<% @users.each do |user| %>
+<%= user.email %> - <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %><br /> 
+<% end %>
